@@ -1,1 +1,22 @@
+name: PDeploy spcae game app
 
+on:
+  
+  push:
+    branches:
+      - project-1
+    
+     
+env:
+  DATABRICKS_HOST: https://adb-5630925069180830.10.azuredatabricks.net
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+
+  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
