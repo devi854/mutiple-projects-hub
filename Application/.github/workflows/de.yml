@@ -1,0 +1,44 @@
+name: PDeploy spcae game app
+
+on:
+  
+  push:
+    branches:
+      - project-1
+      
+    #paths: 
+     # - Application
+    
+     
+env:
+  DATABRICKS_HOST: https://adb-5630925069180830.10.azuredatabricks.net
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+
+  
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          ref: project-1
+          path: Application/Tailspin.SpaceGame.Web.sln
+        
+     # - name: .Net Build
+      #  uses: EasyDesk/action-dotnet-build@v1.0.0
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.202'
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release
+      - name: Publish
+        run: dotnet publish --no-restore --configuration Release --output publish
+
