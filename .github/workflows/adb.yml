@@ -12,7 +12,7 @@ on:
      
 env:
   DATABRICKS_HOST: https://adb-5076614175371553.13.azuredatabricks.net
-  
+  RUNNER_WORKSPACE: /runner/_work/mutiple-projects-hub\mutiple-projects-hub\application-1
 
   
 
@@ -26,6 +26,16 @@ jobs:
           #submodules: true
           ref: project-1
           path: application-1
+          
+      - name: Set runner workspace directory
+        run: |
+          mkdir -p /runner/_work/mutiple-projects-hub\mutiple-projects-hub\application-1
+          echo "::set-env name=RUNNER_WORKSPACE::/runner/_work/mutiple-projects-hub\mutiple-projects-hub\application-1"
+          
+      - name: Use modified runner workspace
+        run: |
+          cd ${{ env.RUNNER_WORKSPACE }}
+
       - name: adad
         uses: antstackio/databricks-deploy@v1.0.2
         with:
