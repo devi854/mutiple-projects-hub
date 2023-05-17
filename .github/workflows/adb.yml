@@ -25,7 +25,7 @@ jobs:
         with:
           submodules: true
           ref: project-1
-          path: Application-1/
+          path: application-1/
           
       - name: Run Databicks Notebooks GitHub Action Demo
         uses: Herman-Wu/databrick-notebook-run-action@project-1
