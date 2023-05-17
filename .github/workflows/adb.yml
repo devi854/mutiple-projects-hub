@@ -32,6 +32,6 @@ jobs:
           databricks-repo-branch: 'project-1'
           databricks-token: 'dapi0853497e6218536ee19ee744430a2450-3'
           databricks-host: 'https://adb-5076614175371553.13.azuredatabricks.net'
-          databricks-repo-id: 'prasadkesari329.dk@outlook.com'
+          databricks-repo-id: 'prasadkesari329.dk@outlook.com/mutiple-projects-hub'
      
         
