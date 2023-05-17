@@ -12,7 +12,7 @@ on:
      
 env:
   DATABRICKS_HOST: https://adb-5076614175371553.13.azuredatabricks.net
-  RUNNER_WORKSPACE: /runner/_work/mutiple-projects-hub\mutiple-projects-hub\application-1
+  RUNNER_WORKSPACE: D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1
 
   
 
@@ -29,8 +29,8 @@ jobs:
           
       - name: Set runner workspace directory
         run: |
-          mkdir -p /runner/_work/mutiple-projects-hub\mutiple-projects-hub\application-1
-          echo "::set-env name=RUNNER_WORKSPACE::/runner/_work/mutiple-projects-hub\mutiple-projects-hub\application-1"
+          mkdir -p D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1
+          echo "::set-env name=RUNNER_WORKSPACE::D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1"
           
       - name: Use modified runner workspace
         run: |
