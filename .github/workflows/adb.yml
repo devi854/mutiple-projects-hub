@@ -26,12 +26,12 @@ jobs:
           #submodules: true
           ref: project-1
           path: application-1
-      - name: databricks-import-directory
-        uses: microsoft/databricks-import-directory@v1.0.0
+      - name: adad
+        uses: antstackio/databricks-deploy@v1.0.2
         with:
-          databricks-host: https://adb-5076614175371553.13.azuredatabricks.net
-          databricks-token: dapi0853497e6218536ee19ee744430a2450-3
-          local-path: ./application-1/notebooks
-          remote-path: /Users   
-    
+          databricks-repo-branch: 'project-1'
+          databricks-token: 'dapi0853497e6218536ee19ee744430a2450-3'
+          databricks-host: 'https://adb-5076614175371553.13.azuredatabricks.net'
+          #databricks-repo-id: 'get repo id from databricks'
+     
         
