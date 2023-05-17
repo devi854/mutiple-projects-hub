@@ -27,9 +27,9 @@ jobs:
           ref: project-1
           path: application-1
           
-      - name: Set runner workspace directory
-        run: |
-          mkdir -p D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1
+     # - name: Set runner workspace directory
+     #   run: |
+     #     mkdir -p D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1
           #echo "::set-env name=RUNNER_WORKSPACE::D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1"
           
       - name: Use modified runner workspace
