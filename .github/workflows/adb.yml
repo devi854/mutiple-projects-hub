@@ -1,0 +1,37 @@
+name: notebooks 
+
+on:
+  
+  push:
+    branches:
+      - project-1
+    paths:
+      - 'Application-1/**'
+      
+    
+     
+env:
+  DATABRICKS_HOST: https://adb-5076614175371553.13.azuredatabricks.net
+  
+
+  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          ref: project-1
+          path: Application-1/
+          
+      - name: Run Databicks Notebooks GitHub Action Demo
+        uses: Herman-Wu/databrick-notebook-run-action@project-1
+        with:
+          databrick-server-uri: https://adb-5076614175371553.13.azuredatabricks.net
+          atabrick-token: dapi0853497e6218536ee19ee744430a2450-3
+          databrick-local-path: '/github/workspace/application-1/'
+          databrick-workspace-path: /Users
+        
