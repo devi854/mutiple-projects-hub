@@ -6,7 +6,7 @@ on:
     branches:
       - project-1
     paths:
-      - 'Application-1/**'
+      - 'application-1/**'
       
     
      
