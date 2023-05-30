@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - project-1
-    #paths:
-    #  - 'Application/**'
+    paths:
+      - 'Application/**'
       
     
      
