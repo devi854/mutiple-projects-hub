@@ -1,0 +1,9 @@
+{
+	"name": "vbnd-001",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "15507145-c023-4b27-8a7f-b0b39a9fd4a5",
+		"tenantId": "ede58b21-37a8-4b40-b1ed-3b62f51309af"
+	}
+}
