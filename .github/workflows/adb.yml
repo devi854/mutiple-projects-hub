@@ -1,4 +1,4 @@
-name: notebooks 
+name: PDeploy spcae game app
 
 on:
   
@@ -11,37 +11,33 @@ on:
     
      
 env:
-  DATABRICKS_HOST: https://adb-5076614175371553.13.azuredatabricks.net
-  GITHUB_WORKSPACE: D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1
+  DATABRICKS_HOST: https://adb-5630925069180830.10.azuredatabricks.net
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+  DOTNET_INSTALL_DIR: "runner/dotnet"
 
   
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          #submodules: true
+          submodules: true
           ref: project-1
-          path: application-1
-          
-     # - name: Set runner workspace directory
-     #   run: |
-     #     mkdir -p D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1
-          #echo "::set-env name=RUNNER_WORKSPACE::D:\a\mutiple-projects-hub\mutiple-projects-hub\application-1"
-          
-      - name: Use modified runner workspace
-        run: |
-          cd ${{ env.GITHUB_WORKSPACE }}
-
-      - name: adad
-        uses: antstackio/databricks-deploy@v1.0.2
-        with:
-          databricks-repo-branch: 'project-1'
-          databricks-token: 'dapi0853497e6218536ee19ee744430a2450-3'
-          databricks-host: 'https://adb-5076614175371553.13.azuredatabricks.net'
-          databricks-repo-id: 'prasadkesari329.dk@outlook.com/mutiple-projects-hub'
-     
+          path: muliple-projects-hub/project-1/Application
         
+     # - name: .Net Build
+      #  uses: EasyDesk/action-dotnet-build@v1.0.0
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3.0.3
+        with:
+          dotnet-version: '6.0'
+    
+        
+        
+     
+
