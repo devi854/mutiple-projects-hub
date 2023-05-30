@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - project-1
-    paths:
-      - 'Application/**'
+    #paths:
+    #  - 'Application/**'
       
     
      
@@ -20,7 +20,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
