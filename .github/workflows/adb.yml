@@ -2,9 +2,9 @@ name: PDeploy spcae game app #######
 
 on:
   
-  push:
+  pull_request:
     branches:
-      - project-1
+      - main
     paths:
       - 'application-1/**'
       
@@ -24,10 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: true
-          ref: project-1
-          path: muliple-projects-hub/project-1/Application
         
      # - name: .Net Build
       #  uses: EasyDesk/action-dotnet-build@v1.0.0
